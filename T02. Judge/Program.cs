@@ -56,7 +56,7 @@ namespace T02._Judge
                 Dictionary<string, int> studentsResultsInCurrentContest = kvp.Value;
                 int postition = 1;
 
-                foreach (var student in studentsResultsInCurrentContest.OrderByDescending(x => x.Value))
+                foreach (var student in studentsResultsInCurrentContest.OrderByDescending(x => x.Value).ThenBy(x => x.Key))
                 {
                     Console.WriteLine($"{postition}. {student.Key} <::> {student.Value}");
                     postition++;
@@ -84,7 +84,7 @@ namespace T02._Judge
             }
 
             int counter = 1;
-            foreach (KeyValuePair<string, int> participant in individualScore.OrderByDescending(kvp => kvp.Value))
+            foreach (KeyValuePair<string, int> participant in individualScore.OrderByDescending(kvp => kvp.Value).ThenBy(s => s.Key))
             {
                 Console.WriteLine($"{counter}. {participant.Key} -> {participant.Value}");
                 counter++;
