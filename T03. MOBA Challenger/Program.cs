@@ -69,8 +69,7 @@ namespace T03._MOBA_Challenger
                                 {
                                     continue;
                                 }
-
-                                // GOT THE BUG!!!
+                                
                                 if (playerOneData.Value > playerTwoData.Value)
                                 {
                                     allCompetitors.Remove(playerTwo);
